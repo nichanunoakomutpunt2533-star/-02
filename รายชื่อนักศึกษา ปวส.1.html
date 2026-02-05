@@ -1,0 +1,355 @@
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เทมเพลตหน้ารายชื่อ (หนังสือรุ่น)</title>
+  <style>
+    :root{
+      --gap: 18px;
+      --card-pad: 10px;
+      --card-bg: #ffffff;
+      --line-color: #333333;
+      --font-family: "Noto Sans Thai", Arial, sans-serif;
+    }
+    html,body{height:100%;margin:0;font-family:var(--font-family);background:#f3f4f6;color:#111}
+    .container{max-width:1200px;margin:28px auto;padding:12px}/* grid */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:var(--gap);
+  align-items:start;
+}
+
+.card{
+  background:var(--card-bg);
+  padding:var(--card-pad);
+  border-radius:10px;
+  box-shadow:0 1px 4px rgba(0,0,0,0.06);
+  display:flex;flex-direction:column;align-items:stretch;
+}
+
+/* square image area that the image will cover */
+.photo-wrap{
+  width:100%;
+  aspect-ratio:1/1; /* keeps square */
+  background:#e9e9e9;
+  border-radius:6px;
+  overflow:hidden;
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
+.photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-placeholder{font-size:14px;color:#666;text-align:center;padding:8px}
+
+/* input to change image (hidden) */
+.card input[type=file]{display:none}
+.controls{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}
+.btn{cursor:pointer;padding:6px 10px;border-radius:6px;border:1px solid #ccc;background:#fff;font-size:13px}
+
+/* text lines under image */
+.info{margin-top:8px;display:flex;flex-direction:column;gap:6px}
+.line{display:flex;flex-direction:column}
+.label{font-size:11px;color:#666}
+.value{font-size:15px;color:var(--line-color);font-weight:600}
+
+/* thin ruled lines likeในสเก็ตช์ */
+.ruled{border-top:1px dashed #bbb;margin-top:4px}
+
+/* print-friendly: single column per printed page width */
+@media print{
+  .container{max-width:100%;padding:0}
+  .grid{gap:8px}
+  .card{box-shadow:none;border:1px solid #ddd}
+}
+
+/* small screens */
+@media (max-width:420px){
+  :root{--gap:12px}
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2></h2>
+    <p></p><div class="grid" id="grid">
+  <!-- card (ทำซ้ำได้ตามต้องการ) -->
+
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q23.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย นิพิฐพนธ์  เย็นศิริ</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100001 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q22.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว อภิรดี  ไชยมงคล</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">คณะกรรมการชมรมวิชาชีพฯ ประจำปีการศึกษา2569</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100002 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q21.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว บุษกร  สิงห์คา</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">คณะกรรมการชมรมวิชาชีพฯ ประจำปีการศึกษา2569</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100004 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q20.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว พรภิชา  ปฤกษา</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100005 / กลุ่ม 1</div></div>
+    </div>
+     </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q19.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว ทิพยาภรณ์  กลิ่นภักดี</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">คณะกรรมการชมรมวิชาชีพฯ ประจำปีการศึกษา</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100006 / กลุ่ม 1</div></div>
+    </div>
+     </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q18.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย ศิวัฒน์  บุญประดิษฐ์</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100007 / กลุ่ม 1</div></div>
+    </div>
+     </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q17.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว ธัญชนก  อินทร์ชาลี</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">ประธานชมรมวิชาชีพฯ ประจำปีการศึกษา 2569</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100008 / กลุ่ม 1</div></div>
+    </div>
+     </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q16.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว สุพิชญา  บมขุนทด</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">เหรัญญิกชมรมวิชาชีพฯ ประจำปีการศึกษา2569</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100009 / กลุ่ม 1</div></div>
+    </div>
+     </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q15.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว เหมย  เซียว</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">คณะกรรมการชมรมวิชาชีพฯ ประจำปีการศึกษา2569</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100011 / กลุ่ม 1</div></div>
+    </div>
+     </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q14.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว จิราพร  ลําพันธ์</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100012 / กลุ่ม 1</div></div>
+    </div>
+     </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q13.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว อธิชา  พรมรินทร์</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">คณะกรรมการชมรมวิชาชีพฯ ประจำปีการศึกษา2569</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100013 / กลุ่ม 1</div></div>
+    </div>
+     </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q12.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย รพีภัทร  พรมจรรยา</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">คณะกรรมการชมรมวิชาชีพฯ ประจำปีการศึกษา2569</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100014 / กลุ่ม 1</div></div>
+    </div>
+     </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q11.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว กมลชนก  อึ้งตระกูล</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100015 / กลุ่ม 1</div></div>
+    </div>
+     </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q10.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว มาริสา  พรมจันทร์</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100017 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q9.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย สิทธิชัย  สุทธิใจ</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">ปฏิคมชมรมวิชาชีพฯ ประจำปีการศึกษา 2569</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100018 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q8.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย พลกฤษณ์  ป้องจิตต์ใส</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">กรรมการชมรมวิชาชีพฯ ประจำปีการศึกษา2569</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100019 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q7.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว พรพรรณ  พลมีสัก</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100020 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q6.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว ปวีณ์ธิดา  ถาวรรัตน์</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">นายทะเบียนชมรมวิชาชีพฯ ประจำปีการศึกษา2569</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100021 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q5.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย อภิสิทธิ์  แสงเพิง</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">ประชาสัมพันธ์ชมรมวิชาชีพฯ ประจำปีการศึกษา2569</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100022 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q4.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว มธุรดา  ไปนอก</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100023 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q3.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย ศิวกร  เมฆหมอก</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">คณะกรรมการชมรมวิชาชีพฯ ประจำปีการศึกษา2569</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100024 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q1.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย ธนากร  สุวรรณพิทักษ์</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100025 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+    <div class="card">
+    <div class="photo-wrap">
+         <img src="img/q2.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว เบญจวรรณ  หมั่นป้อม</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68319100026 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+    
+    

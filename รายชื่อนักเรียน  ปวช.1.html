@@ -1,0 +1,573 @@
+<!doctype html>
+
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เทมเพลตหน้ารายชื่อ (หนังสือรุ่น)</title>
+  <style>
+    :root{
+      --gap: 18px;
+      --card-pad: 10px;
+      --card-bg: #ffffff;
+      --line-color: #333333;
+      --font-family: "Noto Sans Thai", Arial, sans-serif;
+    }
+    html,body{height:100%;margin:0;font-family:var(--font-family);background:#f3f4f6;color:#111}
+    .container{max-width:1200px;margin:28px auto;padding:12px}/* grid */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:var(--gap);
+  align-items:start;
+}
+
+.card{
+  background:var(--card-bg);
+  padding:var(--card-pad);
+  border-radius:10px;
+  box-shadow:0 1px 4px rgba(0,0,0,0.06);
+  display:flex;flex-direction:column;align-items:stretch;
+}
+
+/* square image area that the image will cover */
+.photo-wrap{
+  width:100%;
+  aspect-ratio:1/1; /* keeps square */
+  background:#e9e9e9;
+  border-radius:6px;
+  overflow:hidden;
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+  
+}
+.photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-placeholder{font-size:14px;color:#666;text-align:center;padding:8px}
+
+/* input to change image (hidden) */
+.card input[type=file]{display:none}
+.controls{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}
+.btn{cursor:pointer;padding:6px 10px;border-radius:6px;border:1px solid #ccc;background:#fff;font-size:13px}
+
+/* text lines under image */
+.info{margin-top:8px;display:flex;flex-direction:column;gap:6px}
+.line{display:flex;flex-direction:column}
+.label{font-size:11px;color:#666}
+.value{font-size:15px;color:var(--line-color);font-weight:600}
+
+/* thin ruled lines likeในสเก็ตช์ */
+.ruled{border-top:1px dashed #bbb;margin-top:4px}
+
+/* print-friendly: single column per printed page width */
+@media print{
+  .container{max-width:100%;padding:0}
+  .grid{gap:8px}
+  .card{box-shadow:none;border:1px solid #ddd}
+}
+
+/* small screens */
+@media (max-width:420px){
+  :root{--gap:12px}
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2></h2>
+    <p></p><div class="grid" id="grid">
+  <!-- card (ทำซ้ำได้ตามต้องการ) -->
+
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c1.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว ลออรัตน์  แสงทวี</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100001 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/c2.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว วิชาดา  วิจิตรสาร</div></div>
+       <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100002 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/c3.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value"> นางสาว สุวรรณษา  แอบเพ็ชร</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100003 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c4.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว กานต์พิชชา  ดีขุนทด</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100004 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c5.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย ธนัด  เชี่ยวชาญ</div></div>
+<div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100005 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c6.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว สุวิชาดา  เทียนสุคนธ์</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100006 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+ <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c7.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว วิกาญดา  ถิละผะลิกะ</div></div>
+<div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100007 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c8.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย สมิทธิ์  เครื่องพาที</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100008 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+   <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c9.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว พลอยประพัฒน์  เชื้อไร่</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100009 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c10.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว อริศรา  นาครอด</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100010 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/c11.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย สุทิรัตน์  เสียงลํ้า</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100011 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/c12.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว พรยมล  สุมิตร</div></div>
+<div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / ห้อง</div><div class="value">68219100012 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c13.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย ปุณฉัตร  เอ่าเจริญ</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100013 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c14.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว ชลดา  หกกําปัง</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100014 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c15.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย วิวัฒน์ชัย  ทองอยู่</div></div>
+<div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100015 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c16.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว ศุภวรรณ  เสือฉิม</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100016 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/c17.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย ภัทรวิทย์  เม่นทอง</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100017 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/c18.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย ชลชาติ  กัณฐกะ</div></div>
+<div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100018 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c19.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว ปวิชญา  จิตสม</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100019 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c20.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว สุรัสวดี  คําจันทร์</div></div>
+<div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100020 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/c21.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว สิริโสภา  คําจันทร์</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100021 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/c22.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย ชยุตพงศ์  สังศรีอินทร์</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100022 / กลุ่ม 2</div></div>
+     
+    </div>
+  </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/c23.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว กนกอร  หมวดมหิง</div></div>
+     <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100023 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/c24.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว อรทัย  คําพันธุ์</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100024 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/c25.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย อานนท์  ช่างปรุง</div></div>
+<div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว กลุ่ม</div><div class="value">68219100025 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/c26.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว ศิริรัตน์  ชูพรม</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100026 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/c27.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว นภัสวรรณ  ศิริเกษม</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100027 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c28.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว ดวงมรกต  บุญประดิษฐ์</div></div>
+<div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100028 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c29.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย วุฒิกร  ศิริขันธ์</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100029 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c30.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย ภาคภูมิ  มีกําปัง</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100030 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c31.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว อนันญาพร  สังข์ทอง</div></div>
+<div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว /กลุ่ม</div><div class="value">68219100031 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c32.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว ดุจเพ็ชร  หมวดอินทร</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100032 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c33.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว ภัทรธิดา  เบ้าเงิน</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100033 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c34.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว ป้ญฑารีย์  จันทร์ทอง</div></div>
+<div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100034 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c35.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย ณรงค์วุฒิ  มนต์กลาง</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100035 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c36.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว ปราณปรียา  มนตรี</div></div>
+<div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100036 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c37.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย ธีระนันท์  ถิ่นทัพไทย</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100037 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/c38.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย อนุพันธ์  รุ่งอุทัย</div></div>
+<div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">เทคโนโลยีธุรกิจดิจิทัล</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">68219100038 / กลุ่ม 2</div></div>
+    </div>
+  </div>
+  
+
+  </div>  <script>
+    // ทำให้ปุ่มอัปโหลดแต่ละการ์ดแทนรูปใน .photo-wrap
+    document.querySelectorAll('.card').forEach(card => {
+      const input = card.querySelector('.file-input');
+      const img = card.querySelector('.photo-wrap img');
+      input.addEventListener('change', e => {
+        const file = e.target.files && e.target.files[0];
+        if(!file) return;
+        const url = URL.createObjectURL(file);
+        img.src = url;
+      });
+    });
+
+    // ถ้าต้องการ สคริปต์เพื่อเพิ่มการ์ด อันนี้ตัวอย่างเล็กๆ
+    function addCard(data){
+      const template = document.querySelector('.card');
+      const clone = template.cloneNode(true);
+      if(data){
+        clone.querySelector('.value').textContent = data.name || 'ชื่อ';
+      }
+      document.getElementById('grid').appendChild(clone);
+      // re-bind file input for new card
+      const input = clone.querySelector('.file-input');
+      const img = clone.querySelector('.photo-wrap img');
+      input.addEventListener('change', e => {
+        const file = e.target.files && e.target.files[0];
+        if(!file) return;
+        img.src = URL.createObjectURL(file);
+      });
+    }
+  </script></body>
+</html>

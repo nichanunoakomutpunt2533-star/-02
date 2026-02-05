@@ -1,0 +1,285 @@
+<!doctype html>
+
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เทมเพลตหน้ารายชื่อ (หนังสือรุ่น)</title>
+  <style>
+    :root{
+      --gap: 18px;
+      --card-pad: 10px;
+      --card-bg: #ffffff;
+      --line-color: #333333;
+      --font-family: "Noto Sans Thai", Arial, sans-serif;
+    }
+    html,body{height:100%;margin:0;font-family:var(--font-family);background:#f3f4f6;color:#111}
+    .container{max-width:1200px;margin:28px auto;padding:12px}/* grid */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:var(--gap);
+  align-items:start;
+}
+
+.card{
+  background:var(--card-bg);
+  padding:var(--card-pad);
+  border-radius:10px;
+  box-shadow:0 1px 4px rgba(0,0,0,0.06);
+  display:flex;flex-direction:column;align-items:stretch;
+}
+
+/* square image area that the image will cover */
+.photo-wrap{
+  width:100%;
+  aspect-ratio:1/1; /* keeps square */
+  background:#e9e9e9;
+  border-radius:6px;
+  overflow:hidden;
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
+.photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-placeholder{font-size:14px;color:#666;text-align:center;padding:8px}
+
+/* input to change image (hidden) */
+.card input[type=file]{display:none}
+.controls{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}
+.btn{cursor:pointer;padding:6px 10px;border-radius:6px;border:1px solid #ccc;background:#fff;font-size:13px}
+
+/* text lines under image */
+.info{margin-top:8px;display:flex;flex-direction:column;gap:6px}
+.line{display:flex;flex-direction:column}
+.label{font-size:11px;color:#666}
+.value{font-size:15px;color:var(--line-color);font-weight:600}
+
+/* thin ruled lines likeในสเก็ตช์ */
+.ruled{border-top:1px dashed #bbb;margin-top:4px}
+
+/* print-friendly: single column per printed page width */
+@media print{
+  .container{max-width:100%;padding:0}
+  .grid{gap:8px}
+  .card{box-shadow:none;border:1px solid #ddd}
+}
+
+/* small screens */
+@media (max-width:420px){
+  :root{--gap:12px}
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2></h2>
+    <p></p><div class="grid" id="grid">
+  <!-- card (ทำซ้ำได้ตามต้องการ) -->
+
+  <div class="card">
+    <div class="photo-wrap">
+         <img src="img/a15.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว กฎษกร  พันธสีนาม</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">คณะกรรมการชมรมวิชาชีพฯ ประจำปีการศึกษา 2568</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">คอมพิวเตอร์ธุรกิจ</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">662020400001 / กลุ่ม 1</div></div>
+    </div>
+    
+  </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/a17.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว จิราวัลย์  บุตรดี</div></div>
+      <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">คอมพิวเตอร์ธุรกิจ</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">662020400002 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/a14.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว ชลธิชา  เพ็งพา</div></div>
+       <div class="line"><div class="label">ตำแหน่ง</div><div class="value">คณะกรรมการชมรมวิชาชีพฯ ประจำปีการศึกษา2568</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">คอมพิวเตอร์ธุรกิจ</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">662020400004 / กลุ่ม 1</div></div>
+    </div>
+     </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/a7.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว ปนัดดา  สวนอาด</div></div>
+       <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">คอมพิวเตอร์ธุรกิจ</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">662020400005 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/a2.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว สุธาวัลย์  สิงห์ทอง</div></div>
+       <div class="line"><div class="label">ตำแหน่ง</div><div class="value">เลขานุการชมรมวิชาชีพฯ ประจำปีการศึกษา 2568</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">คอมพิวเตอร์ธุรกิจ</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">662020400006 / กลุ่ม 1</div></div>
+    </div>
+  </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/a12.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย ไชยภัทร  ประจํากลาง</div></div>
+       <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">คอมพิวเตอร์ธุรกิจ</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value"> 662020400007 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/a3.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย รัฐภาคพ์  นุจิตร</div></div>
+       <div class="line"><div class="label">ตำแหน่ง</div><div class="value">ประธานชมรมวิชาชีพฯ ประจำปีการศึกษา 2568</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">คอมพิวเตอร์ธุรกิจ</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">662020400008  / กลุ่ม 1</div></div>
+    </div>
+    </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/a6.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว พลอยไพลิน  แสนสุข</div></div>
+       <div class="line"><div class="label">ตำแหน่ง</div><div class="value">คณะกรรมการชมรมวิชาชีพฯ ประจำปีการศึกษา 2568</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">คอมพิวเตอร์ธุรกิจ</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">662020400009  / กลุ่ม 1</div></div>
+    </div>
+    </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/a10.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว ณัฐณิชา  ลบหนองบัว</div></div>
+       <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">คอมพิวเตอร์ธุรกิจ</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">662020400010 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/a13.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว ชลภัทร  ศรีพรหม</div></div>
+       <div class="line"><div class="label">ตำแหน่ง</div><div class="value">เหรัญญิกชมรมวิชาชีพฯ ประจำปีการศึกษา 2568</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">คอมพิวเตอร์ธุรกิจ</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">662020400015  / กลุ่ม 1</div></div>
+    </div>
+    </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/a4.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย ภูมินทร์  ลาดบัวขาว</div></div>
+       <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">คอมพิวเตอร์ธุรกิจ</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">662020400016  / กลุ่ม 1</div></div>
+    </div>
+    </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/a5.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว วรินทร  สําอางผิว</div></div>
+       <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">คอมพิวเตอร์ธุรกิจ</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">662020400020  / กลุ่ม 1</div></div>
+    </div>
+    </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/a1.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว อาภัสรา  เข็มทอง</div></div>
+       <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">คอมพิวเตอร์ธุรกิจ</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">662020400022 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/a9.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย นรากรณ์  พุดซ้อน</div></div>
+       <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">คอมพิวเตอร์ธุรกิจ</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">662020400023 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/a11.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นางสาว ฐิติยา  แสงจําปา</div></div>
+       <div class="line"><div class="label">ตำแหน่ง</div><div class="value">ประชาสัมพันธ์ชมรมวิชาชีพฯ ประจำปีการศึกษา 2568</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">คอมพิวเตอร์ธุรกิจ</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">662020400025 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/a8.jpg" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย นัทธวัฒน์  ปลอดสันเทียะ</div></div>
+       <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">คอมพิวเตอร์ธุรกิจ</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">662020400027 / กลุ่ม 1</div></div>
+    </div>
+    </div>
+<div class="card">
+    <div class="photo-wrap">
+         <img src="img/l.png" width="600" height="600" >
+      </label>
+    </div>
+    <div class="info">
+      <div class="line"><div class="label">ชื่อ</div><div class="value">นาย วรวุฒิ  โมรา</div></div>
+       <div class="line"><div class="label">ตำแหน่ง</div><div class="value">-</div></div>
+      <div class="line"><div class="label">สาขาวิชา</div><div class="value">คอมพิวเตอร์ธุรกิจ</div></div>
+      <div class="line"><div class="label">รหัสประจำตัว / กลุ่ม</div><div class="value">662020400037 / กลุ่ม 1</div></div>
+    </div>
+  
+  

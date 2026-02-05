@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>การพัฒนาหนังสือรุ่นระบบอิเล็กทรอนิกส์</title>
+
+  <!-- ใช้ฟอนต์ไทย Sarabun จาก Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --frame-border: #8b2b20;    /* ขอบกรอบด้านนอก */
+      --primary: #29515e;         /* สีน้ำเงิน-teal (แถบหัว/ปุ่ม) */
+      --primary-dark: #29515e;
+      --accent: #111;             /* ป้ายสไลด์ (ดำ) */
+      --text: #222;
+      --muted: #6b6b6b;
+      --page-max-width: 1200px;
+    }
+
+    /* ขอบกรอบรอบหน้า (ตามภาพมีขอบน้ำตาลแดงบางๆ) */
+    html,body{
+      height:100%;
+    }
+    body{
+      margin:0;
+      font-family: "Sarabun", sans-serif;
+      color:var(--text);
+      
+    }
+
+    /* header */
+    header{
+      position:relative;
+      background:var(--primary);
+      color:white;
+      padding:34px 20px;
+      text-align:center;
+    }
+    header h1{
+      margin:0;
+      font-weight:600;
+      font-size:28px;
+      letter-spacing:0.5px;
+    }
+
+    /* ป้ายสไลด์มุมขวา */
+    .slide-badge{
+      position:absolute;
+      right:18px;
+      top:18px;
+      background:var(--accent);
+      color:#fff;
+      padding:14px 18px;
+      border-radius:10px;
+      font-weight:600;
+      box-shadow: 0 4px 0 rgba(0,0,0,0.08);
+      font-size:18px;
+    }
+
+    /* เมนูปุ่ม */
+    .nav{
+      display:flex;
+      gap:18px;
+      padding:18px 28px;
+      justify-content:flex-start;
+      flex-wrap:wrap;
+      background:transparent;
+    }
+    .nav .nav-btn{
+      background:var(--primary);
+      border:3px solid rgba(0,0,0,0.12);
+      color:white;
+      padding:12px 20px;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:600;
+      min-width:110px;
+      text-align:center;
+      box-shadow: 0 3px 0 rgba(0,0,0,0.06);
+    }
+    .nav .nav-btn:hover{
+      background:var(--primary-dark);
+    }
+
+  
+    
+
+    /* กล่องเนื้อหากลางที่มีเส้นขอบ */
+    .center-box{
+      width:80%;
+      max-width:900px;
+      margin:60px auto;
+      padding:60px 40px;
+      border:3px solid rgba(115, 109, 47, 0.35);
+      border-radius:4px;
+      text-align:center;
+      box-sizing:border-box;
+      background:#fff;
+    }
+    .center-box h2{
+      margin:0 0 8px 0;
+      font-weight:500;
+      font-size:20px;
+      color:var(--text);
+    }
+    .center-box p{
+      margin:6px 0 0 0;
+      color:var(--muted);
+      font-weight:400;
+    }
+
+    /* Footer */
+    footer{
+      background:var(--primary);
+      color:white;
+      padding:14px 20px;
+      text-align:center;
+    }
+
+    /* Responsive */
+    @media (max-width:900px){
+      .center-box{ width:92%; padding:40px 20px; margin:40px auto; }
+      .nav{ justify-content:center; gap:12px; }
+      .nav .nav-btn{ min-width:90px; padding:10px 14px; font-size:14px; }
+      header h1{ font-size:20px; }
+      .slide-badge{ right:12px; top:12px; padding:10px 12px; font-size:14px; }
+    }
+  </style>
+</head>
+<body>
+       <img src="img/d9.jpg" width="100%" height="380" >
+    <br
+      
+    header>
+</main> 
+    <nav class="nav" aria-label="เมนูหลัก">
+     <a href="หน้าแรก หนังสือรุ่น.html">หน้าแรก</a>
+      <a href="เกี่ยวกับ หนังสือรุ่น.html">เกี่ยวกับ</a>
+      <a href="บุคลากร หนังสือรุ่น.html">บุคลากร/นักเรียน นักศึกษา</a>
+      <a href="ลองทำภาพกิจกรรม.html">ภาพกิจกรรม</a>
+     <a href="ติดต่อเรา หนังสือรุ่น.html">ติดต่อเรา</a>
+     <a href="E - Book.html">E - Book</a>
+    </nav>
+  
+</div>   
+
+</body>
+</html>
+    <main>
+    
+               <img src="img/d10.jpg" width="100%" height="380" >
+    <br>
+      </section>
+
+      <!-- ตัวอย่างเนื้อหาเพิ่มเติม (ถ้าต้องการเพิ่ม) -->
+      <section id="home" style="max-width:1000px;margin:0 auto;padding:8px 16px;">
+        <h3 style="color:var(--primary);margin-top:0;">ยินดีต้อนรับ</h3>
+        <p style="color:var(--muted);line-height:1.6;">
+            เข้าสู่เว็บไซต์หนังสือรุ่นระบบอิเล็กทรอนิกส์ สาขาวิชาเทคโนโลยีธุรกิจดิจิทัล
+        </p>
+      </section>
+
+    </main>
+
+    <footer>
+      © 2568 การพัฒนาหนังสือรุ่นระบบอิเล็กทรอนิกส์
+    </footer>
+</footer>
+ </div> 
+ </body>
+ </html>
